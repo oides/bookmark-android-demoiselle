@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>br.gov.serpro</groupId>
+	<artifactId>bookmark-mobile-gae</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
+
+	<name></name>
+	<description></description>
+	<url></url>
+
+	<parent>
+		<groupId>br.gov.frameworkdemoiselle</groupId>
+		<artifactId>demoiselle-jsf-parent</artifactId>
+		<version>2.3.0-BETA2-SNAPSHOT</version>
+	</parent>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.primefaces</groupId>
+			<artifactId>primefaces</artifactId>
+			<version>3.3.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.primefaces</groupId>
+			<artifactId>primefaces-mobile</artifactId>
+			<version>0.9.3</version>
+		</dependency>
+		<dependency>
+			<groupId>br.gov.frameworkdemoiselle.component</groupId>
+			<artifactId>demoiselle-objectify</artifactId>
+			<version>2.0.0-BETA1-SNAPSHOT</version>
+			<scope>compile</scope>
+		</dependency>
+		
+		<!-- REST/JSON -->
+		<dependency>
+			<groupId>org.jboss.resteasy</groupId>
+			<artifactId>resteasy-jaxrs</artifactId>
+			<version>${jaxrs-version}</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.jboss.resteasy</groupId>
+			<artifactId>resteasy-jackson-provider</artifactId>
+			<version>${jaxrs-version}</version>
+			<scope>compile</scope>
+		</dependency>
+		<!-- REST/JSON -->
+				
+	</dependencies>
+
+	<repositories>
+		<repository>
+			<id>demoiselle.sourceforge.net-release</id>
+			<url>http://demoiselle.sourceforge.net/repository/release</url>
+		</repository>
+		<repository>
+			<id>snapshot.sourceforge.net-release</id>
+			<url>http://demoiselle.sourceforge.net/repository/snapshot</url>
+		</repository>
+	</repositories>
+	
+	<properties>
+		<jaxrs-version>2.3.4.Final</jaxrs-version>
+	</properties>
+	
+</project>
