@@ -51,7 +51,15 @@
 			<scope>compile</scope>
 		</dependency>
 		<!-- REST/JSON -->
-				
+		
+		<!-- Integração do CDI com o Resteasy -->
+		<dependency>
+			<groupId>org.jboss.resteasy</groupId>
+			<artifactId>resteasy-cdi</artifactId>
+			<version>${jaxrs-version}</version>
+		</dependency>
+		<!-- Integração do CDI com o Resteasy -->
+						
 	</dependencies>
 
 	<repositories>

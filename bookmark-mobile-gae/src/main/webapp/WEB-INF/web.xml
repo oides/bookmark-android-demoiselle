@@ -44,7 +44,14 @@
 		<url-pattern>/rest/*</url-pattern>
 	</servlet-mapping>
 	<!--  Configurações para RESTEASY/JSON -->
-		
+
+	<!--  Configurações para RESTEASY/CDI -->
+	<context-param>
+		<param-name>resteasy.injector.factory</param-name>
+		<param-value>org.jboss.resteasy.cdi.CdiInjectorFactory</param-value>
+	</context-param>
+	<!--  Configurações para RESTEASY/CDI -->
+	
 	<!-- Configurações para o GAE -->
 	<context-param>
 		<param-name>javax.faces.PROJECT_STAGE</param-name>
