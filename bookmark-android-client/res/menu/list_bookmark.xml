@@ -1,0 +1,16 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+	
+    <item
+        android:id="@+id/newBookmark"
+        android:showAsAction="ifRoom"
+        android:title="@string/new_bookmark"
+        android:icon="@drawable/ic_new">
+    </item>
+    <item
+        android:id="@+id/reloadBookmark"
+        android:showAsAction="ifRoom"
+        android:title="@string/reload_bookmark"
+        android:icon="@drawable/ic_refresh">
+    </item>
+        
+</menu>
