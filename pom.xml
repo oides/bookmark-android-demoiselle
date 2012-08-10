@@ -9,6 +9,7 @@
 
 	<modules>
 		<module>bookmark-mobile-gae</module>
+		<module>bookmark-android-client</module>
 	</modules>
 	
 </project>

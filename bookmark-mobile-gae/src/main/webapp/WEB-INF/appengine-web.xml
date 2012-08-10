@@ -1,6 +1,6 @@
 <appengine-web-app xmlns="http://appengine.google.com/ns/1.0">
 
-	<application>${project.artifactId}</application>
+	<application>${project.artifactId}-2</application>
 	<version>2</version>
 
 	<system-properties>
