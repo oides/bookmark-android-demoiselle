@@ -3,6 +3,8 @@ package br.gov.serpro.bookmarkandroid.business.service;
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,33 +20,33 @@ import br.gov.serpro.bookmarkandroid.business.domain.Bookmark;
 
 public class BookmarkService {
 
-	private final static String SERVICE_URI = "http://bookmark-mobile-gae-2.appspot.com/rest/bookmark/";
+	private final static String SERVICE_URI = "http://bookmark-mobile-gae-2.appspot.com/rest/bookmark";
 	
 	public List<Bookmark> findAll() throws Exception {
 
-		return this.executeService("findAll");
+		return this.executeServiceArray("/findAll");
 		
 	}
 	
-	public void delete(String bookmarkId) {
+	public void delete(String bookmarkId) throws Exception {
+		
+		this.executeServiceVoid("/delete/" + encode(bookmarkId));
 		
 	}
 
-	public void insert(String description, String link) {
+	public void insert(String description, String link) throws Exception {
+		
+		this.executeServiceVoid("/insert/" + encode(description) + "/" + encode(link));
 		
 	}
 
-	public void insert(String bookmarkId, String description, String link) {
+	public void update(String bookmarkId, String description, String link) throws Exception {
+		
+		this.executeServiceVoid("/update/" + encode(bookmarkId) + "/" + encode(description) + "/" + encode(link));
 		
 	}
 
-	public Bookmark load(String bookmarkId) {
-
-		return null;
-		
-	}
-
-	public List<Bookmark> executeService(String operation) throws Exception {
+	private List<Bookmark> executeServiceArray(String operation) throws Exception {
 		
 		List<Bookmark> retorno = null;
 
@@ -77,11 +79,35 @@ public class BookmarkService {
 
 		} catch (Exception e) {
 			
+			e.printStackTrace();
+			
 			throw new Exception("Infelizmente o servidor não está respondendo.");
 			
 		}
 
 		return retorno;		
+		
+	}
+	
+	private void executeServiceVoid(String operation) throws Exception {
+		
+		HttpGet request = new HttpGet(SERVICE_URI + operation);
+		request.setHeader("Accept", "application/json");
+		request.setHeader("Content-type", "application/json");
+
+		DefaultHttpClient httpClient = new DefaultHttpClient();
+
+		try {
+			
+			httpClient.execute(request);
+
+		} catch (Exception e) {
+			
+			e.printStackTrace();
+			
+			throw new Exception("Infelizmente o servidor não está respondendo.");
+			
+		}
 		
 	}
 	
@@ -102,8 +128,13 @@ public class BookmarkService {
 	
 	private Bookmark loadBookmark(JSONObject json) throws JSONException {
 		
-		return new Bookmark(json.getString("id"), json.getString("description"), json.getString("link"));
+		return new Bookmark(json.getLong("id"), json.getString("description"), json.getString("link"));
 		
 	}
 
+	private String encode(String param) throws UnsupportedEncodingException {
+		
+		return URLEncoder.encode(param, "UTF-8").replace("+", "%20");
+		
+	}
 }

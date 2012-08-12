@@ -5,6 +5,8 @@
     <string name="menu_settings">Settings</string>
     <string name="title_activity_list_bookmark">Bookmark</string>
     <string name="new_bookmark">Novo</string>
-	<string name="reload_bookmark">Atualizar</string>
-    
+    <string name="save_bookmark">Salvar</string>
+    <string name="delete_bookmark">Remover</string>
+    <string name="reload_bookmark">Atualizar</string>
+
 </resources>

@@ -1,0 +1,17 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+	
+    <item
+        android:id="@+id/deleteBookmark"
+        android:showAsAction="ifRoom"
+        android:title="@string/delete_bookmark"
+        android:icon="@drawable/ic_delete">
+    </item>
+        
+    <item
+        android:id="@+id/saveBookmark"
+        android:showAsAction="ifRoom"
+        android:title="@string/save_bookmark"
+        android:icon="@drawable/ic_save">
+    </item>
+        
+</menu>

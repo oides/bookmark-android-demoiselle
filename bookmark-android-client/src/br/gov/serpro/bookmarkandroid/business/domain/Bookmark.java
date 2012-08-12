@@ -16,9 +16,13 @@ public class Bookmark implements Serializable {
 		super();
 	}
 
-	public Bookmark(String id, String description, String link) {
+	public Bookmark(Long id, String description, String link) {
+		
+		this.id = id;
+		
 		this.description = description;
 		this.link = link;
+		
 	}
 
 	public Long getId() {
