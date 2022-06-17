@@ -74,7 +74,7 @@
 	</repositories>
 	
 	<properties>
-		<jaxrs-version>2.3.4.Final</jaxrs-version>
+		<jaxrs-version>3.0.11.Final</jaxrs-version>
 	</properties>
 	
 </project>
